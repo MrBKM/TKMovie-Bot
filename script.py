@@ -76,7 +76,7 @@ class Script(object):
 <b>Used Storage:</b> <code>{}</code> MiB
 <b>Free Storage:</b> <code>{}</code> MiB"""
 
-    FORCESUB_TXT = """You Have Not Subscribed To My Channel. To View The File, Click On <b>📣 MOVIE TIME UPDATES 📣</b> Button & Join. Then Click On The <b>🔄 REFRESH 🔄</b> Button To Receive The File ✅"""
+    FORCESUB_TXT = """You Have Not Subscribed To My Channel. To View The File, Click On <b>📣 FILM ZONE UPDATES 📣</b> Button & Join. Then Click On The <b>🔄 REFRESH 🔄</b> Button To Receive The File ✅"""
 
     
     LOG_TEXT_G = """<b>🎬 Group:</b> {}(<code>{}</code>)
