@@ -14,7 +14,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from googletrans import Translator
-from pyrogram import Client, filters
+from pyrogram import Client, filters, enums 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from .list import list
 from database.gtrans_mdb import find_one
