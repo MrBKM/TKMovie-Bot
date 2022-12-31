@@ -1,18 +1,3 @@
-#!/usr/bin/env python3
-# Copyright (C) @ZauteKm
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 from __future__ import unicode_literals
 
 import asyncio
@@ -41,7 +26,7 @@ def time_to_seconds(time):
 def a(client, message: Message):
     urlissed = get_text(message)
     query = ''
-    reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
+    reply_id = message.reply_to_message.id if message.reply_to_message else message.id
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
@@ -69,7 +54,7 @@ def a(client, message: Message):
             #     m.edit("Exceeded 30mins cap")
             #     return
 
-            performer = f"[Zaute Km]" 
+            performer = f"[Bikash Maity]" 
             thumb_name = f'thumb{message.message_id}.jpg'
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
@@ -95,11 +80,11 @@ def a(client, message: Message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-        message.reply_audio(audio_file, caption=rep, parse_mode='HTML',reply_to_message_id=reply_id, title=title, duration=dur, performer=performer, thumb=thumb_name)
+        message.reply_audio(audio_file, caption=rep, parse_mode='HTML', reply_to_message_id=reply_id, title=title, duration=dur, performer=performer, thumb=thumb_name)
         m.delete()
         message.delete()
     except Exception as e:
-        m.edit('**An Error Occured. Please Report This To @JOSPSupport !!**')
+        m.edit('**An Error Occured. Please Report This To @TGDragonIDM !!**')
         print(e)
     try:
         os.remove(audio_file)
@@ -251,7 +236,7 @@ def time_to_seconds(time):
 @Client.on_message(filters.command(["video"]))
 async def vsong(client, message: Message):
     urlissed = get_text(message)
-    reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
+    reply_id = message.reply_to_message.id if message.reply_to_message else message.id
 
     pablo = await client.send_message(
         message.chat.id, f"**🔎 Searching..** `{urlissed}`", reply_to_message_id=reply_id
