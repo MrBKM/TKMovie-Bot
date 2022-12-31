@@ -23,7 +23,7 @@ import time
 import aiofiles
 import aiohttp
 import wget
-from pyrogram import Client, filters
+from pyrogram import Client, filters, enums 
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message
 from youtubesearchpython import SearchVideos
@@ -37,7 +37,7 @@ def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
-@Client.on_message(filters.command(["song", "music", "mp3"]) & ~filters.channel & ~filters.edited)
+@Client.on_message(filters.command(["song"]) & ~filters.channel)
 def a(client, message: Message):
     urlissed = get_text(message)
     query = ''
@@ -248,7 +248,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
-@Client.on_message(filters.command(["vsong", "video", "mp4"]))
+@Client.on_message(filters.command(["video"]))
 async def vsong(client, message: Message):
     urlissed = get_text(message)
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
