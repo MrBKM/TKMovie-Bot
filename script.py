@@ -1,15 +1,15 @@
 class Script(object):
     START_TXT = """<i><b>Hello 👋 {},</i></b>
 
-<i><b>I Am Not Only <a href="https://t.me/MovieTimeMovie_Bot">Movie Time Bot</a> To Assist You But Also Employed At <a href="https://t.me/+b9a_VyGV8wA4MmM1">Movie Time</a> Group By <a href="https://t.me/TGDragonIDM">Dragon</a> So You Can't Get My Service By Adding Me To Your Group So Don't Waste Your Time & Data 😉</i></b>
+<i><b>I Am Not Only <a href="https://t.me/FilmZoneSeries_Bot">Film Zone Bot</a> To Assist You But Also Employed At <a href="https://t.me/+G7YDaxQeRgQxZTA1">Film Zone</a> Group By <a href="https://t.me/TGDragonIDM">Dragon</a> So You Can't Get My Service By Adding Me To Your Group So Don't Waste Your Time & Data 😉</i></b>
 
-<i><b>Better You Click Below & Join <a href="https://t.me/+b9a_VyGV8wA4MmM1">Movie Time</a> & Feel The Experience Of Downloading Unlimited Movies/Series ✅</i></b>
+<i><b>Better You Click Below & Join <a href="https://t.me/+G7YDaxQeRgQxZTA1">Film Zone</a> & Feel The Experience Of Downloading Unlimited Movies/Series ✅</i></b>
 
 <i><b>For More Information Click ℹ️ Help</i></b>"""
 
     HELP_TXT = """<i><b>Hello 👋 {},</i></b>
 
-<i><b>I can Guide You Through All Of <a href="https://t.me/MovieTimeMovie_Bot">Movie Time Bot</a>'s Cool Features & How To Properly Use Them. Use The Buttons Below To Navigate Through All Of The Modules.</i></b>"""
+<i><b>I can Guide You Through All Of <a href="https://t.me/FilmZoneSeries_Bot">Film Zone Bot</a>'s Cool Features & How To Properly Use Them. Use The Buttons Below To Navigate Through All Of The Modules.</i></b>"""
 
     ALIVE_TXT = """Module :- Alive
 
@@ -43,7 +43,7 @@ class Script(object):
 
     FAQ_TXT = """📌 Read The FAQ Before Contacting Support
 ✯ ━━━━━ ✧ ━━━━━ ✯
-👉 Here Are Answers To Frequently Asked Questions About Movie Time 
+👉 Here Are Answers To Frequently Asked Questions About Film Zone 
 👉 If You Did Not Find The Answer To Your Question, Please Ask ✔️ <a href="https://t.me/TGDragonIDM">Dragon</a>
 
 <b>Maintained By ✔️ <a href="https://t.me/TGDragonIDM">Dragon</a></b>"""
