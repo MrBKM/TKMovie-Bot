@@ -20,7 +20,7 @@ BATCH_FILES = {}
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
-    if len(message.command) != 1:
+    if len(message.command) != 2:
         buttons = [[
             InlineKeyboardButton('🔗 Film Zone', url=f'https://t.me/+G7YDaxQeRgQxZTA1')
             ],[
@@ -65,7 +65,7 @@ async def start(client, message):
             parse_mode=enums.ParseMode.HTML
             )
         return
-    if len(message.command) == 1 and message.command[2] in ["subscribe", "error", "okay", "help"]:
+    if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
             InlineKeyboardButton('🔗 Film Zone', url=f'https://t.me/+G7YDaxQeRgQxZTA1')
             ],[
