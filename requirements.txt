@@ -11,11 +11,10 @@ asyncio==3.4.3
 aiohttp==3.7.4
 aiofiles
 requests
-pyshorteners
 bs4
 pytz
 pynewtonmath
-imdbpy
+git+https://github.com/Joelkb/cinemagoer
 youtube-search-python==1.4.6
 youtube_search
 youtube-dl
@@ -24,4 +23,4 @@ wget
 python-arq
 ffmpeg-python
 requests
-ytthumb
+
