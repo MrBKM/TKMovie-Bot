@@ -475,6 +475,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('❎ Close', callback_data='close'), 
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
         await query.message.edit_text(
             text="☑️ ▢ ▢"
         )
@@ -494,6 +495,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help'),
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
         await query.message.edit_text(
             text="☑️ ▢ ▢"
         )
@@ -514,6 +516,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
         await query.message.edit_text(
             text="☑️ ▢ ▢"
         )
@@ -534,6 +537,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
         await query.message.edit_text(
             text="☑️ ▢ ▢"
         )
@@ -554,6 +558,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
         await query.message.edit_text(
             text="☑️ ▢ ▢"
         )
@@ -574,6 +579,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons) 
+        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
         await query.message.edit_text(
             text="☑️ ▢ ▢"
         )
@@ -594,6 +600,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons) 
+        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
         await query.message.edit_text(
             text="☑️ ▢ ▢"
         )
@@ -622,6 +629,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 """, show_alert=True)
 
     elif "about" in query.data:
+        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
         return await query.answer("""
 ꧁֍FILM ZONE BOT֍꧂
 
