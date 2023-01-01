@@ -227,7 +227,7 @@ async def start(client, message):
             InlineKeyboardButton('Contact 🆘👤', url='https://t.me/TGDragonIDM')
         ],
         [
-            InlineKeyboardButton('❎ Close This File ❎', callback_data='close_data')
+            InlineKeyboardButton('❎ Close This File ❎', callback_data='close')
         ]
         ]
     await client.send_cached_media(
