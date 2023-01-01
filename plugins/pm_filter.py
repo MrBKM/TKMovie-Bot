@@ -95,25 +95,25 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("🔙 Back", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(text=f"Check PM", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton(f"🗓 {round(int(offset)) + 1} / {round(total)}",
-                                  callback_data="pages")]
+            [InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+             InlineKeyboardButton("🗑️", callback_data="close"),
+             InlineKeyboardButton("⚠️ Faq", callback_data="faq")]
         )
-    elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"🗓 {round(int(offset)) + 1} / {round(total)}", callback_data="pages"),
-             InlineKeyboardButton(text=f"Check PM", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton("Next ➡", callback_data=f"next_{req}_{key}_{n_offset}")])
+                [InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://t.me/{temp.U_NAME}")]
+        )
     else:
         btn.append(
             [
-                InlineKeyboardButton("🔙 Back", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🗓 {round(int(offset)) + 1} / {round(total)}", callback_data="pages"),
-                InlineKeyboardButton("Next ➡", callback_data=f"next_{req}_{key}_{n_offset}")]
+                InlineKeyboardButton("🔙 Back Page", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton("Next Page ➡", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
     btn.insert(0, [
-        InlineKeyboardButton("text=ミ★ FILM ZONE ★彡", callback_data="filmzone")
+        InlineKeyboardButton(text="ミ★ FILM ZONE ★彡", callback_data="filmzone"),
+    ])
+    btn.insert(0, [
+        InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://t.me/{temp.U_NAME}")
     ])
     try:
         await query.edit_message_reply_markup(
@@ -152,12 +152,9 @@ async def advantage_spoll_choker(bot, query):
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
-    if query.data == "close_data":
+    if query.data == "close":
         await query.message.delete()
-        try:
-            await query.message.reply_to_message.delete()
-        except:
-            pass
+        
     elif query.data == "delallconfirm":
         userid = query.from_user.id
         chat_type = query.message.chat.type
@@ -377,7 +374,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('Contact 🆘👤', url='https://t.me/TGDragonIDM')
             ],
             [
-                InlineKeyboardButton('❎ Close This File ❎', callback_data='close_data')
+                InlineKeyboardButton('❎ Close This File ❎', callback_data='close')
             ]
             ]
 
@@ -431,7 +428,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('Contact 🆘👤', url='https://t.me/TGDragonIDM')
             ],
             [
-                InlineKeyboardButton('❎ Close This File ❎', callback_data='close_data')
+                InlineKeyboardButton('❎ Close This File ❎', callback_data='close')
             ]
             ]
         await query.answer()
@@ -475,9 +472,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('😎 About', callback_data='about'),
             InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton('❎ Close', callback_data='close_data'), 
+            InlineKeyboardButton('❎ Close', callback_data='close'), 
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
+        await query.message.edit_text(
+            text="☑️ ▢ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ☑️"
+        )
         await query.message.edit_text(
             text=Script.HELP_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
@@ -488,6 +495,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help'),
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
+        await query.message.edit_text(
+            text="☑️ ▢ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ☑️"
+        )
         await query.message.edit_text(
             text=Script.ALIVE_TXT,
             disable_web_page_preview=True,
@@ -499,6 +516,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
+        await query.message.edit_text(
+            text="☑️ ▢ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ☑️"
+        )
         await query.message.edit_text(
             text=Script.IMDB_TXT,
             disable_web_page_preview=True,
@@ -510,6 +537,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
+        await query.message.edit_text(
+            text="☑️ ▢ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ☑️"
+        )
         await query.message.edit_text(
             text=Script.LINK_TXT,
             disable_web_page_preview=True,
@@ -521,6 +558,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
+        await query.message.edit_text(
+            text="☑️ ▢ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ☑️"
+        )
         await query.message.edit_text(
             text=Script.FAQ_TXT,
             disable_web_page_preview=True,
@@ -532,6 +579,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
+        await query.message.edit_text(
+            text="☑️ ▢ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ☑️"
+        )
         await query.message.edit_text(
             text=Script.IDS_TXT,
             disable_web_page_preview=True,
@@ -543,6 +600,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
+        await query.message.edit_text(
+            text="☑️ ▢ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ▢"
+        )
+        await query.message.edit_text(
+            text="☑️ ☑️ ☑️"
+        )
         await query.message.edit_text(
             text=Script.MUSIC_TXT,
             disable_web_page_preview=True,
@@ -676,23 +743,41 @@ async def auto_filter(client, msg, spoll=False):
             for file in files
         ]
 
+    InlineKeyboardButton(
+                    text=f"| {get_size(file.file_size)} |",
+                    callback_data=f'{pre}_#{file.file_id}',
+                ),
+            ]
+            for file in files
+        ]
+
     if offset != "":
         key = f"{message.chat.id}-{message.message_id}"
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"🗓 {round(int(total_results))}", callback_data="pages"),
-             InlineKeyboardButton(text="Check PM", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton(text="Next ➡", callback_data=f"next_{req}_{key}_{offset}")]
+            [InlineKeyboardButton(text="Next Page ➡", callback_data=f"next_{req}_{key}_{offset}")]
+        )    
+        btn.append(
+            [InlineKeyboardButton(text=f"🗓 1/{round(int(total_results) / 10)}", callback_data="pages"),
+             InlineKeyboardButton("🗑️", callback_data="close"),
+             InlineKeyboardButton("⚠️ Faq", callback_data="faq")]
+        )
+        btn.append(
+                [InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://t.me/{temp.U_NAME}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="🗓", callback_data="pages"),
-             InlineKeyboardButton(text="Check PM", url=f"https://t.me/{temp.U_NAME}")]
+            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages"),
+             InlineKeyboardButton("🗑️", callback_data="close"),
+             InlineKeyboardButton("⚠️ Faq", callback_data="faq")]
+        )
+        btn.append(
+                [InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://t.me/{temp.U_NAME}")]
         )
     btn.insert(0, [
-        InlineKeyboardButton("text=ミ★ FILM ZONE ★彡", callback_data="filmzone")
-    ])
+        InlineKeyboardButton(text="ミ★ FILM ZONE ★彡", callback_data="filmzone"),
+    ]) 
     reply_id = message.reply_to_message.message.id if message.reply_to_message else message.id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
