@@ -109,7 +109,7 @@ async def next_page(bot, query):
                 InlineKeyboardButton("Next Page ➡", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
     btn.insert(0, [
-        InlineKeyboardButton(text="ミ★ FILM ZONE ★彡", callback_data="filmzone"),
+        InlineKeyboardButton(text="ミ★ TK ENTERTAINMENT ★彡", callback_data="tk"),
     ])
     btn.insert(0, [
         InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://t.me/{temp.U_NAME}")
@@ -366,15 +366,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
-        buttons = [
-            [
-                InlineKeyboardButton('🆘👤 Owner', url='https://t.me/TGDragonIDM'),
-                InlineKeyboardButton('Contact 🆘👤', url='https://t.me/TGDragonIDM')
-            ],
-            [
-                InlineKeyboardButton('❎ Close This File ❎', callback_data='close')
-            ]
-            ]
+        buttons = [[
+        InlineKeyboardButton('🎥 TK HD HuB', url='https://t.me/+4yoDh0x8j80wOTVl'),
+        InlineKeyboardButton('🎥 TK HP HuB', url='https://t.me/+oRO-NDOF4LU4ZjRl')
+        ],[
+        InlineKeyboardButton(text="⁉️ Want To Save/Share This File", callback_data="scst")
+        ],[
+        InlineKeyboardButton('❎ Close This File ❎', callback_data='close')]]
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
@@ -420,15 +418,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = f_caption
         if f_caption is None:
             f_caption = f"{title}"
-        buttons = [
-            [
-                InlineKeyboardButton('🆘👤 Owner', url='https://t.me/TGDragonIDM'),
-                InlineKeyboardButton('Contact 🆘👤', url='https://t.me/TGDragonIDM')
-            ],
-            [
-                InlineKeyboardButton('❎ Close This File ❎', callback_data='close')
-            ]
-            ]
+        buttons = buttons = [[
+        InlineKeyboardButton('🎥 TK HD HuB', url='https://t.me/+4yoDh0x8j80wOTVl'),
+        InlineKeyboardButton('🎥 TK HP HuB', url='https://t.me/+oRO-NDOF4LU4ZjRl')
+        ],[
+        InlineKeyboardButton(text="⁉️ Want To Save/Share This File", callback_data="scst")
+        ],[
+        InlineKeyboardButton('❎ Close This File ❎', callback_data='close')]]
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
@@ -441,7 +437,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('🔗 Film Zone', url=f'https://t.me/+G7YDaxQeRgQxZTA1')
+            InlineKeyboardButton('🔗 Tk Entertainment', url=f'https://t.me/Tk_movies_adda')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😎 About', callback_data='about')
@@ -473,16 +469,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('❎ Close', callback_data='close'), 
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
-        await query.message.edit_text(
-            text="☑️ ▢ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ☑️"
-        )
         await query.message.edit_text(
             text=Script.HELP_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
