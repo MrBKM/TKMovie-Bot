@@ -104,4 +104,22 @@ class Script(object):
       
     STATUS = """{}\nChat Member Status**\n\n```recently``` - {}\n```within_week``` - {}\n```within_month``` - {}\n```long_time_ago``` - {}\nDeleted Account - {}\nBot - {}\nUnCached - {}
 """
+    CAPTION = """╭──[ミ★ FILM ZONE ★彡]──╮
 
+├• 👋 𝐇𝐞𝐥𝐥𝐨 {mention}
+
+├• ✅ 𝐘𝐨𝐮𝐫 𝐅𝐢𝐥𝐞 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲
+
+├• 🎬 𝐓𝐢𝐭𝐥𝐞 : {file_name}
+
+├• 💾 𝐒𝐢𝐳𝐞 : {file_size}
+
+├• 🔘 𝐉𝐨𝐢𝐧 🎗 𝐒𝐡𝐚𝐫𝐞 🎗 𝐒𝐮𝐩𝐩𝐨𝐫𝐭
+
+├• 🔗 <a href="https://t.me/+G7YDaxQeRgQxZTA1">𝑭𝒊𝒍𝒎 𝒁𝒐𝒏𝒆</a>
+
+├• 📣 <a href="https://t.me/+1isLVFCeektjODc1">𝑭𝒊𝒍𝒎 𝒁𝒐𝒏𝒆 𝑼𝒑𝒅𝒂𝒕𝒆𝒔</a>
+
+├• ⬆️ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐁𝐲 <a href="https://t.me/TGDragonIDM">𝑫𝒓𝒂𝒈𝒐𝒏</a>
+
+╰──────[ 👑 ]───────╯"""
