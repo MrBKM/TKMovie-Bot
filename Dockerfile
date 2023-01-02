@@ -8,5 +8,5 @@ RUN cd /
 RUN pip3 install -U pip && pip3 install -U -r requirements.txt
 RUN mkdir /TKMovie-Bot
 WORKDIR /TKMovie-Bot
-COPY start.sh /start.sh
-CMD ["/bin/bash", "/start.sh"]
+COPY . .
+CMD ["python3", "bot.py"]
