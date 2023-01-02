@@ -22,7 +22,7 @@ BATCH_FILES = {}
 async def start(client, message):
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('🔗 Film Zone', url=f'https://t.me/+G7YDaxQeRgQxZTA1')
+            InlineKeyboardButton('🔗 Tk Entertainment', url=f'https://t.me/Tk_movies_adda')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😎 About', callback_data='about')
@@ -49,7 +49,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "📣 FILM ZONE UPDATES 📣", url=invite_link.invite_link
+                    "📣 TK ENTERTAINMENT UPDATES 📣", url=invite_link.invite_link
                 )
             ]
         ]
@@ -70,7 +70,7 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('🔗 Film Zone', url=f'https://t.me/+G7YDaxQeRgQxZTA1')
+            InlineKeyboardButton('🔗 Tk Entertainment', url=f'https://t.me/Tk_movies_adda')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😎 About', callback_data='about')
@@ -224,15 +224,14 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
-    buttons = [
-        [
-            InlineKeyboardButton('🆘👤 Owner', url='https://t.me/TGDragonIDM'),
-            InlineKeyboardButton('Contact 🆘👤', url='https://t.me/TGDragonIDM')
-        ],
-        [
-            InlineKeyboardButton('❎ Close This File ❎', callback_data='close')
-        ]
-        ]
+    buttons = [[
+        InlineKeyboardButton('🎥 TK HD HuB', url='https://t.me/+4yoDh0x8j80wOTVl'),
+        InlineKeyboardButton('🎥 TK HP HuB', url='https://t.me/+oRO-NDOF4LU4ZjRl')
+        ],[
+        InlineKeyboardButton(text="⁉️ Want To Save/Share This File", callback_data="scst")
+        ],[
+        InlineKeyboardButton('❎ Close This File ❎', callback_data='close')
+    ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
