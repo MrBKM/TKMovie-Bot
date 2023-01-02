@@ -45,7 +45,7 @@ async def next_page(bot, query):
         pass
     elif int(req) not in [query.from_user.id, 0]:
         return await query.answer(
-            "Hello (query.user.first_name) This Is Not Your Message 🤗\n\nRequest Your Own ✍️\n\n©️ FILM ZONE", show_alert=True)
+            "Hello {query.from_user.first_name} This Is Not Your Message 🤗\n\nRequest Your Own ✍️\n\n©️ FILM ZONE", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -168,20 +168,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     title = chat.title
                 except:
                     await query.message.edit_text("Make sure I'm present in your group!!", quote=True)
-                    return await query.answer('Piracy Is Crime')
+                    return await query.answer('Connecting Film Lovers')
             else:
                 await query.message.edit_text(
                     "I'm not connected to any groups!\nCheck /connections or connect to any groups",
                     quote=True
                 )
-                return await query.answer('Piracy Is Crime')
+                return await query.answer('Connecting Film Lovers')
 
         elif chat_type in ["group", "supergroup"]:
             grp_id = query.message.chat.id
             title = query.message.chat.title
 
         else:
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('Connecting Film Lovers')
 
         st = await client.get_chat_member(grp_id, userid)
         if (st.status == "creator") or (str(userid) in ADMINS):
@@ -206,7 +206,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 except:
                     pass
             else:
-                await query.answer("That's not for you!!", show_alert=True)
+                await query.answer("That's not for you !!", show_alert=True)
     elif "groupcb" in query.data:
         await query.answer()
 
@@ -235,7 +235,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=keyboard,
             parse_mode="md"
         )
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('Connecting Film Lovers')
     elif "connectcb" in query.data:
         await query.answer()
 
@@ -256,7 +256,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
         else:
             await query.message.edit_text('Some error occurred!!', parse_mode="md")
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('Connecting Film Lovers')
     elif "disconnect" in query.data:
         await query.answer()
 
@@ -279,7 +279,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode="md"
             )
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('Connecting Film Lovers')
     elif "deletecb" in query.data:
         await query.answer()
 
@@ -297,7 +297,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode="md"
             )
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('Connecting Film Lovers')
     elif query.data == "backcb":
         await query.answer()
 
@@ -308,7 +308,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(
                 "There are no active connections!! Connect to some groups first.",
             )
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('Connecting Film Lovers')
         buttons = []
         for groupid in groupids:
             try:
@@ -349,7 +349,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             pass
         elif int(user) != 0 and query.from_user.id != int(user):
             return await query.answer(
-                "Hello (query.user.first_name) This Is Not Your Message 🤗\n\nRequest Your Own ✍️\n\n©️ FILM ZONE", show_alert=True)
+                "Hello {query.from_user.first_name} This Is Not Your Message 🤗\n\nRequest Your Own ✍️\n\n©️ FILM ZONE", show_alert=True)
 
         if not files_:
             return await query.answer('No such file exist.')
@@ -449,7 +449,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('😎 About', callback_data='about')
         ]]   
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
+        await client.send_chat_action(query.message.chat.id enums.ChatAction.TYPING)
         m=await message.reply_sticker("CAACAgUAAxkBAAEHEnpjrtejbNM3Vf_L5vudZRqMxMTzVQACkgQAAkOCMFZOKrTnrmt1Ei0E")
         await asyncio.sleep(1)
         await m.delete()
@@ -459,7 +459,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-        await query.answer('Piracy Is Crime')
+        await query.answer('Connecting Film Lovers')
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('🚨 Alive', callback_data='alive'),
@@ -617,6 +617,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif "filmzone" in query.data:
+        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
         return await query.answer("""
 ミ★ FILM ZONE ★彡
 
@@ -648,7 +649,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         if str(grp_id) != str(grpid):
             await query.message.edit("Your Active Connection Has Been Changed. Go To /settings.")
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('Connecting Film Lovers')
 
         if status == "True":
             await save_group_settings(grpid, set_type, False)
