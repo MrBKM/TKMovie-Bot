@@ -30,7 +30,7 @@ BUTTONS = {}
 SPELL_CHECK = {}
 
 
-@Client.on_message(filters.group & filters.text & filters.chat(-1001896100678) & filters.incoming)
+@Client.on_message(filters.group & filters.text & filters.chat(-1001510283128) & filters.incoming)
 async def give_filter(client, message):
     k = await manual_filters(client, message)
     if k == False:
@@ -479,16 +479,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help'),
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
-        await query.message.edit_text(
-            text="☑️ ▢ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ☑️"
-        )
         await query.message.edit_text(
             text=Script.ALIVE_TXT,
             disable_web_page_preview=True,
@@ -500,16 +490,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
-        await query.message.edit_text(
-            text="☑️ ▢ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ☑️"
-        )
         await query.message.edit_text(
             text=Script.IMDB_TXT,
             disable_web_page_preview=True,
@@ -521,16 +501,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
-        await query.message.edit_text(
-            text="☑️ ▢ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ☑️"
-        )
         await query.message.edit_text(
             text=Script.LINK_TXT,
             disable_web_page_preview=True,
@@ -542,16 +512,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
-        await query.message.edit_text(
-            text="☑️ ▢ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ☑️"
-        )
         await query.message.edit_text(
             text=Script.FAQ_TXT,
             disable_web_page_preview=True,
@@ -563,16 +523,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons) 
-        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
-        await query.message.edit_text(
-            text="☑️ ▢ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ☑️"
-        )
         await query.message.edit_text(
             text=Script.IDS_TXT,
             disable_web_page_preview=True,
@@ -584,26 +534,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔙 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons) 
-        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
-        await query.message.edit_text(
-            text="☑️ ▢ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ▢"
-        )
-        await query.message.edit_text(
-            text="☑️ ☑️ ☑️"
-        )
         await query.message.edit_text(
             text=Script.MUSIC_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif "filmzone" in query.data:
+    elif "tk" in query.data:
         await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
         return await query.answer("""
-ミ★ FILM ZONE ★彡
+ミ★ TK ENTERTAINMENT ★彡
 
 ☞ Sᴛᴏʀᴀɢᴇ Oғ Nᴇᴡ & Oʟᴅ Mᴏᴠɪᴇs/Sᴇʀɪᴇs
 ☞ Aᴠᴀɪʟᴀʙʟᴇ Iɴ Mᴀɴʏ Sɪᴢᴇs & Lᴀɴɢᴜᴀɢᴇs
@@ -616,7 +556,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif "about" in query.data:
         await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
         return await query.answer("""
-꧁֍FILM ZONE BOT֍꧂
+꧁֍TK ENTERTAINMENT BOT֍꧂
 
 ツ Creator : 『TG』 ཌĐʀᴀɢᴏƝད°ᴵᴰᴹ
 ❖ Language : Python3
@@ -754,7 +694,7 @@ async def auto_filter(client, msg, spoll=False):
                 [InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://t.me/{temp.U_NAME}")]
         )
     btn.insert(0, [
-        InlineKeyboardButton(text="ミ★ FILM ZONE ★彡", callback_data="filmzone"),
+        InlineKeyboardButton(text="ミ★ TK ENTERTAINMENT ★彡", callback_data="tk"),
     ]) 
     reply_id = message.reply_to_message.message.id if message.reply_to_message else message.id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
@@ -808,12 +748,12 @@ async def auto_filter(client, msg, spoll=False):
             await message.delete()
         except Exception as e:
             logger.exception(e)
-            fek = await message.reply_photo(photo="https://telegra.ph/file/255c6b44d09663eab92ea.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            fek = await message.reply_photo(photo="https://telegra.ph/file/3b990c107bec4568bb7b1.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(3600)
             await fek.delete()
             await msg.delete()
     else:
-        fuk = await message.reply_photo(photo="https://telegra.ph/file/255c6b44d09663eab92ea.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+        fuk = await message.reply_photo(photo="https://telegra.ph/file/3b990c107bec4568bb7b1.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(3600)
         await fuk.delete()
         await msg.delete()
