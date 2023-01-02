@@ -1,15 +1,15 @@
 class Script(object):
     START_TXT = """<i><b>Hello 👋 {},</i></b>
 
-<i><b>I Am Not Only <a href="https://t.me/FilmZoneSeries_Bot">Film Zone Bot</a> To Assist You But Also Employed At <a href="https://t.me/+G7YDaxQeRgQxZTA1">Film Zone</a> Group By <a href="https://t.me/TGDragonIDM">Dragon</a> So You Can't Get My Service By Adding Me To Your Group So Don't Waste Your Time & Data 😉</i></b>
+<i><b>I Am Not Only <a href="https://t.me/newitsunique2_bot">Tk Entertainment Bot</a> To Assist You But Also Employed At <a href="https://t.me/Tk_movies_adda">Tk Entertainment</a> Group By <a href="https://t.me/TGDragonIDM">Dragon</a> So You Can't Get My Service By Adding Me To Your Group So Don't Waste Your Time & Data 😉</i></b>
 
-<i><b>Better You Click Below & Join <a href="https://t.me/+G7YDaxQeRgQxZTA1">Film Zone</a> & Feel The Experience Of Downloading Unlimited Movies/Series ✅</i></b>
+<i><b>Better You Click Below & Join <a href="https://t.me/Tk_movies_adda">Tk Entertainment</a> & Feel The Experience Of Downloading Unlimited Movies/Series ✅</i></b>
 
 <i><b>For More Information Click ℹ️ Help</i></b>"""
 
     HELP_TXT = """<i><b>Hello 👋 {},</i></b>
 
-<i><b>I can Guide You Through All Of <a href="https://t.me/FilmZoneSeries_Bot">Film Zone Bot</a>'s Cool Features & How To Properly Use Them. Use The Buttons Below To Navigate Through All Of The Modules.</i></b>"""
+<i><b>I can Guide You Through All Of <a href="https://t.me/newitsunique2_bot">Tk Entertainment Bot</a>'s Cool Features & How To Properly Use Them. Use The Buttons Below To Navigate Through All Of The Modules.</i></b>"""
 
     ALIVE_TXT = """Module :- Alive
 
@@ -43,7 +43,7 @@ class Script(object):
 
     FAQ_TXT = """📌 Read The FAQ Before Contacting Support
 ✯ ━━━━━ ✧ ━━━━━ ✯
-👉 Here Are Answers To Frequently Asked Questions About Film Zone 
+👉 Here Are Answers To Frequently Asked Questions About Tk Entertainment 
 👉 If You Did Not Find The Answer To Your Question, Please Ask ✔️ <a href="https://t.me/TGDragonIDM">Dragon</a>
 
 <b>Maintained By ✔️ <a href="https://t.me/TGDragonIDM">Dragon</a></b>"""
@@ -76,7 +76,7 @@ class Script(object):
 <b>Used Storage:</b> <code>{}</code> MiB
 <b>Free Storage:</b> <code>{}</code> MiB"""
 
-    FORCESUB_TXT = """You Have Not Subscribed To My Channel. To View The File, Click On <b>📣 FILM ZONE UPDATES 📣</b> Button & Join. Then Click On The <b>🔄 REFRESH 🔄</b> Button To Receive The File ✅"""
+    FORCESUB_TXT = """You Have Not Subscribed To My Channel. To View The File, Click On <b>📣 TK ENTERTAINMENT UPDATES 📣</b> Button & Join. Then Click On The <b>🔄 REFRESH 🔄</b> Button To Receive The File ✅"""
 
     
     LOG_TEXT_G = """<b>🎬 Group:</b> {}(<code>{}</code>)
@@ -104,9 +104,7 @@ class Script(object):
       
     STATUS = """{}\nChat Member Status**\n\n```recently``` - {}\n```within_week``` - {}\n```within_month``` - {}\n```long_time_ago``` - {}\nDeleted Account - {}\nBot - {}\nUnCached - {}
 """
-    CAPTION = """╭──[ミ★ FILM ZONE ★彡]──╮
-
-├• 👋 𝐇𝐞𝐥𝐥𝐨 {query.from_user.id}
+    CAPTION = """╭──[ミ★ TK ENTERTAINMENT ★彡]──╮
 
 ├• ✅ 𝐘𝐨𝐮𝐫 𝐅𝐢𝐥𝐞 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲
 
@@ -116,13 +114,13 @@ class Script(object):
 
 ├• 🔘 𝐉𝐨𝐢𝐧 🎗 𝐒𝐡𝐚𝐫𝐞 🎗 𝐒𝐮𝐩𝐩𝐨𝐫𝐭
 
-├• 🔗 <a href="https://t.me/+G7YDaxQeRgQxZTA1">𝑭𝒊𝒍𝒎 𝒁𝒐𝒏𝒆</a>
+├• 🔗 <a href="https://t.me/Tk_movies_adda">𝑻𝒌 𝑬𝒏𝒕𝒆𝒓𝒕𝒂𝒊𝒏𝒎𝒆𝒏𝒕</a>
 
-├• 📣 <a href="https://t.me/+1isLVFCeektjODc1">𝑭𝒊𝒍𝒎 𝒁𝒐𝒏𝒆 𝑼𝒑𝒅𝒂𝒕𝒆𝒔</a>
+├• 📣 <a href="https://t.me/+1isLVFCeektjODc1">𝑻𝒌 𝑬𝒏𝒕𝒆𝒓𝒕𝒂𝒊𝒏𝒎𝒆𝒏𝒕 𝑼𝒑𝒅𝒂𝒕𝒆𝒔</a>
 
-├• ⬆️ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐁𝐲 <a href="https://t.me/TGDragonIDM">𝑫𝒓𝒂𝒈𝒐𝒏</a>
+├• ⬆️ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐁𝐲 <a href="https://t.me/+JaqHJrYziA42Mzdl">𝑻𝒌 𝑩𝒓𝒂𝒏𝒅 𝑺𝒆𝒓𝒊𝒆𝒔</a>
 
 ╰──────[ 👑 ]───────╯"""
 
-    ALRT_TXT = """Hello {} This Is Not Your Message 🤗\n\nRequest Your Own ✍️\n\n©️ FILM ZONE"""
+    ALRT_TXT = """Hello {} This Is Not Your Message 🤗\n\nRequest Your Own ✍️\n\n©️ TK ENTERTAINMENT"""
 
