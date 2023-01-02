@@ -13,35 +13,35 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('API_ID', '25085908'))
-API_HASH = environ.get('API_HASH', '86b8a77b1ecb0507a3da3934e6a2c184')
-BOT_TOKEN = environ.get('BOT_TOKEN', "5520253122:AAFqoHUYkDGmz8MdVnBQgl0TbMEH3S8DQ7M")
+API_ID = int(environ.get('API_ID', '12694006'))
+API_HASH = environ.get('API_HASH', '8719d11809492f836004a39b42599215')
+BOT_TOKEN = environ.get('BOT_TOKEN', "5558697914:AAH40pb8vUV3fusZy8eW-2tpOqmngPqjSww")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
-PICS = (environ.get('PICS', 'https://telegra.ph/file/255c6b44d09663eab92ea.jpg')).split()
+PICS = (environ.get('PICS', 'https://telegra.ph/file/3b990c107bec4568bb7b1.jpg')).split()
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5970680890').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001509177155').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '5970680890').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5970680890 953377581').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001576725431').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '5970680890 953377581').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL', '-1001681054413')
+auth_channel = environ.get('AUTH_CHANNEL', '-1001506877410')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://SangitaMaity:SangitaMaity@cluster0.faejda4.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "SangitaMaity")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://JoyNath:JoyNath@cluster0.oukf6bi.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "JoyNath")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001831556225'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001646581413'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TechMasterz')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
-IMDB = is_enabled((environ.get('IMDB', "False")), False)
+IMDB = is_enabled((environ.get('IMDB', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", f"{Script.CAPTION}")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
