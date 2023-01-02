@@ -44,8 +44,7 @@ async def next_page(bot, query):
     if int(ad_user) in ADMINS:
         pass
     elif int(req) not in [query.from_user.id, 0]:
-        return await query.answer(
-            "Hello {query.from_user.first_name} This Is Not Your Message 🤗\n\nRequest Your Own ✍️\n\n©️ FILM ZONE", show_alert=True)
+        return await query.answer(Script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -348,8 +347,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if int(ad_user) in ADMINS:
             pass
         elif int(user) != 0 and query.from_user.id != int(user):
-            return await query.answer(
-                "Hello {query.from_user.first_name} This Is Not Your Message 🤗\n\nRequest Your Own ✍️\n\n©️ FILM ZONE", show_alert=True)
+            return await query.answer(Script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
 
         if not files_:
             return await query.answer('No such file exist.')
@@ -449,7 +447,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('😎 About', callback_data='about')
         ]]   
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
+        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
         m=await message.reply_sticker("CAACAgUAAxkBAAEHEnpjrtejbNM3Vf_L5vudZRqMxMTzVQACkgQAAkOCMFZOKrTnrmt1Ei0E")
         await asyncio.sleep(1)
         await m.delete()
