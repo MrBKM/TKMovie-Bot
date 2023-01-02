@@ -116,7 +116,7 @@ class Script(object):
 
 ├• 🔗 <a href="https://t.me/Tk_movies_adda">𝑻𝒌 𝑬𝒏𝒕𝒆𝒓𝒕𝒂𝒊𝒏𝒎𝒆𝒏𝒕</a>
 
-├• 📣 <a href="https://t.me/+1isLVFCeektjODc1">𝑻𝒌 𝑬𝒏𝒕𝒆𝒓𝒕𝒂𝒊𝒏𝒎𝒆𝒏𝒕 𝑼𝒑𝒅𝒂𝒕𝒆𝒔</a>
+├• 📣 <a href="https://t.me/+zGKcTYsIpbc4MTVl">𝑻𝒌 𝑬𝒏𝒕𝒆𝒓𝒕𝒂𝒊𝒏𝒎𝒆𝒏𝒕 𝑼𝒑𝒅𝒂𝒕𝒆𝒔</a>
 
 ├• ⬆️ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐁𝐲 <a href="https://t.me/+JaqHJrYziA42Mzdl">𝑻𝒌 𝑩𝒓𝒂𝒏𝒅 𝑺𝒆𝒓𝒊𝒆𝒔</a>
 
