@@ -106,7 +106,7 @@ class Script(object):
 """
     CAPTION = """╭──[ミ★ FILM ZONE ★彡]──╮
 
-├• 👋 𝐇𝐞𝐥𝐥𝐨 {mention}
+├• 👋 𝐇𝐞𝐥𝐥𝐨 {query.from_user.id}
 
 ├• ✅ 𝐘𝐨𝐮𝐫 𝐅𝐢𝐥𝐞 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲
 
@@ -123,3 +123,6 @@ class Script(object):
 ├• ⬆️ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐁𝐲 <a href="https://t.me/TGDragonIDM">𝑫𝒓𝒂𝒈𝒐𝒏</a>
 
 ╰──────[ 👑 ]───────╯"""
+
+    ALRT_TXT = """Hello {} This Is Not Your Message 🤗\n\nRequest Your Own ✍️\n\n©️ FILM ZONE"""
+
