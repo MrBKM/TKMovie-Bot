@@ -350,7 +350,6 @@ async def delete_all_index_confirm(bot, message):
 
 @Client.on_message(filters.command('settings') & filters.user(ADMINS))
 async def settings(client, message):
-    uasync def settings(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id} in PM")
