@@ -24,39 +24,16 @@ async def get_ststs(bot, message):
     await rju.edit(Script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
 
 
-# a function for trespassing into others groups, Inspired by a Vazha
-# Not to be used , But Just to showcase his vazhatharam.
-# @Client.on_message(filters.command('invite') & filters.user(ADMINS))
-async def gen_invite(bot, message):
-    if len(message.command) == 1:
-        return await message.reply('Give me a chat id')
-    chat = message.command[1]
-    try:
-        chat = int(chat)
-    except:
-        return await message.reply('Give Me A Valid Chat ID')
-    try:
-        link = await bot.create_chat_invite_link(chat)
-    except ChatAdminRequired:
-        return await message.reply("Invite Link Generation Failed, Iam Not Having Sufficient Rights")
-    except Exception as e:
-        return await message.reply(f'Error {e}')
-    await message.reply(f'Here is your Invite Link {link.invite_link}')
-
-
 @Client.on_message(filters.command('users') & filters.user(ADMINS))
 async def list_users(bot, message):
-    # https://t.me/Josprojects/
-    raju = await message.reply('Getting List Of Users')
+    # വാഴ മരത്തെ കളിയാക്കിയവർ തന്നെ പേടിച്ചു ഓടിപ്പോയി
+    sps = await message.reply('Getting List Of Users')
     users = await db.get_all_users()
     out = "Users Saved In DB Are:\n\n"
     async for user in users:
-        out += f"<a href=tg://user?id={user['id']}>{user['name']}</a>"
-        if user['ban_status']['is_banned']:
-            out += '( Banned User )'
-        out += '\n'
+        out += f"<a href=tg://user?id={user['id']}>{user['name']}</a>\n"
     try:
-        await raju.edit_text(out)
+        await sps.edit_text(out)
     except MessageTooLong:
         with open('users.txt', 'w+') as outfile:
             outfile.write(out)
@@ -64,16 +41,15 @@ async def list_users(bot, message):
 
 @Client.on_message(filters.command('chats') & filters.user(ADMINS))
 async def list_chats(bot, message):
-    raju = await message.reply('Getting List Of chats')
+    sps = await message.reply('Getting List Of chats')
     chats = await db.get_all_chats()
     out = "Chats Saved In DB Are:\n\n"
     async for chat in chats:
-        out += f"**Title:** `{chat['title']}`\n**- ID:** `{chat['id']}`"
-        if chat['chat_status']['is_disabled']:
-            out += '( Disabled Chat )'
-        out += '\n'
+        username = chat['username']
+        username = "private" if not username else "@" + username
+        out += f"**- Title:** `{chat['title']}`\n**- ID:** `{chat['id']}`\n**Username:** {username}\n"
     try:
-        await raju.edit_text(out)
+        await sps.edit_text(out)
     except MessageTooLong:
         with open('chats.txt', 'w+') as outfile:
             outfile.write(out)
