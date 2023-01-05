@@ -567,6 +567,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
 ֎ Bot : Indian 🇮🇳
 """, show_alert=True)
 
+    elif "scst" in query.data:
+        return await query.answer("""
+» HERE IS THE SOLUTION «
+
+☞ Send Me Rs.50/- Per Month With Payment Proof
+
+UPI 🆔 Details
+
+Google pay 📲 joynathnet4@oksbi
+Phonepe 📲 Soon...
+
+✔️ After Payment Verification Your ID Well Be Freed
+""", show_alert=True)
+    
     elif query.data.startswith("setgs"):
         ident, set_type, status, grp_id = query.data.split("#")
         grpid = await active_connection(str(query.from_user.id))
