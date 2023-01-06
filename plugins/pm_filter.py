@@ -568,6 +568,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 """, show_alert=True)
 
     elif "scst" in query.data:
+        await client.send_chat_action(query.message.chat.id, enums.ChatAction.TYPING)
         return await query.answer("""
 » HERE IS THE SOLUTION «
 
@@ -576,7 +577,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 UPI 🆔 Details
 
 Google pay 📲 joynathnet4@oksbi
-Phonepe 📲 Soon...
+Phonepe 📲 bijoy.nath@ybl
 
 ✔️ After Payment Verification Your ID Well Be Freed
 """, show_alert=True)
